@@ -1,10 +1,10 @@
+import tensorflow as tf
+from tensorflow.keras import layers, Model
+
 '''
 Final code for Actor Critic network in python.
 Use the Tensorflow 2.x
 '''
-
-import tensorflow as tf
-from tensorflow.keras import layers, Model
 
 class AC_Net(Model):
     def __init__(self, scope, trainer, x_dim_p, x_dim_v, n_actions, num_layers, layer_size, regu_scalar):
