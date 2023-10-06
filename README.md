@@ -1,5 +1,5 @@
 # Routing, Modulation and Spectrum Assignment for Elastic Optical Network: A Reinforcement Learning Framework
--Welcome to the Git repository for my master's thesis project at Indian Institute of Technology (ISM)-Dhanbad. We are primarly focused on optimizing the Elastic Optical Networks through the application of the DeepRMSA algorithm. <br>
+- Welcome to the Git repository for my master's thesis project at Indian Institute of Technology (ISM)-Dhanbad. We are primarly focused on optimizing the Elastic Optical Networks through the application of the DeepRMSA algorithm. <br>
 
 Author: **Dushyant Sankhla** <br>
 Institute: **Indian Institute of Technology (ISM), Dhanbad**.<br>
