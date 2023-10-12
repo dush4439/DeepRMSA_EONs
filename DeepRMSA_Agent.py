@@ -143,9 +143,13 @@ class DeepRMSA_Agent():
 			A list of nodes in the kth path from src to dst, or `tf.constant(None)` if the kth path does not exist.
 		"""
 
-		# Get the trainable variables from the local and target networks.
-		from_vars = tf.compat.v1.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, from_scope)
-		to_vars = tf.compat.v1.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, to_scope)
+		# Define a module for the 'from_scope' and get its trainable variables.
+		from_module = tf.Module()
+		from_vars = from_module.trainable_variables
+
+		# Define a module for the 'to_scope' and get its trainable variables.
+		to_module = tf.Module()
+		to_vars = to_module.trainable_variables
 
 		# Create a list of operations that assign the values of the local network variables to the target network variables.
 		op_holder = []

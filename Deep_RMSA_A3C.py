@@ -222,8 +222,10 @@ with tf.compat.v1.Session() as sess:
     # Start the "rmsa" process for each agent in a separate thread
     agent_threads = []
     for agent in agents:
-        agent_rmsa = lambda: agent.rmsa(sess, coord, saver)
-        t = threading.Thread(target=agent_rmsa, args=(agent, sess, coord, saver))
+        def agent_rmsa_wrapper():
+            agent.rmsa(sess, coord, saver)
+
+        t = threading.Thread(target=agent_rmsa_wrapper)
         t.start()
         sleep(0.5)
         agent_threads.append(t)
